@@ -22,10 +22,10 @@ def get_db():
     finally:
         db.close()
 
+@app.head("/")
 @app.get("/")
 def check():
     return {"status": "Running"}
-
 
 @app.post('/add')
 def add(payload: WaitlistSchema, db: Session=Depends(get_db)):
