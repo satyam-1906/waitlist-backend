@@ -34,7 +34,8 @@ def add(payload: WaitlistSchema, db: Session=Depends(get_db)):
         email = payload.email,
         mobile_number = payload.mobile_number,
         location = payload.location,
-        occupation = payload.occupation
+        occupation = payload.occupation,
+        details = payload.details
     )
     db.add(new_record)
     try:
