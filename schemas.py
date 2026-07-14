@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Dict, Any
 
 class WaitlistSchema(BaseModel):
     name: str
@@ -6,3 +7,4 @@ class WaitlistSchema(BaseModel):
     mobile_number: str
     location: str
     occupation: str
+    details: Dict[str, Any]

@@ -1,7 +1,8 @@
-from sqlalchemy import create_engine, Integer, String
+from sqlalchemy import create_engine, Integer, String, JSON
 from sqlalchemy.orm import declarative_base, sessionmaker, Mapped, mapped_column
 import os
 from dotenv import load_dotenv
+from typing import Any, Dict
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -19,5 +20,6 @@ class formData(Base):
     mobile_number: Mapped[str] = mapped_column(String)
     location: Mapped[str] = mapped_column(String)
     occupation: Mapped[str] = mapped_column(String)
+    details: Mapped[Dict[str, Any]] = mapped_column(JSON)
 
 Base.metadata.create_all(bind=engine)
