@@ -3,16 +3,19 @@ from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 from schemas import WaitlistSchema
 from database import sessionLocal, formData
+import keepalive
 
 app = FastAPI()
 
-origins = ['http://localhost:5503', 'http://127.0.0.1:5501', 'http://127.0.0.1:5502', 'http://127.0.0.1', '0.0.0.0']
+origins = ['https://vyomplus-intro-show.vercel.app/']
 
 app.add_middleware(CORSMiddleware,
                    allow_origins = ["*"],
                    allow_credentials = True,
                    allow_methods = ['*'],
                    allow_headers = ['*'])
+
+keepalive.ping()
 
 
 def get_db():
