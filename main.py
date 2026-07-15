@@ -7,7 +7,7 @@ import keepalive
 
 app = FastAPI()
 
-origins = ['https://vyomplus-intro-show.vercel.app/']
+origins = ['https://vyomplus.in/']
 
 app.add_middleware(CORSMiddleware,
                    allow_origins = ["*"],
