@@ -8,7 +8,7 @@ import validation
 
 app = FastAPI()
 
-origins = ['https://vyomplus.in/']
+origins = ['https://vyomplus.in', 'https://waitlist-backend-wihf.onrender.com']
 
 app.add_middleware(CORSMiddleware,
                    allow_origins = ["*"],
